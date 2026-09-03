@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   FlowMind AI — "Kinetic Ether" design tokens
+   Source of truth: the approved Stitch export (DESIGN.md + code.html).
+   Tailwind CSS v4 CSS-first theme — do not add a tailwind.config.ts for
+   this. Add new tokens here; do not scatter raw hex values in components.
+   ========================================================================== */
+@theme {
+  /* ---- Fonts (variables produced by next/font in app/layout.tsx) ---- */
+  --font-heading: var(--font-geist); /* Geist — headings, labels, nav, buttons */
+  --font-body: var(--font-inter); /* Inter — body copy, paragraphs, forms */
+
+  /* ---- Core surfaces ---- */
+  --color-background: #05070a; /* deepest base layer behind everything */
+  --color-foreground: #e1e2e7; /* default body text (Stitch "on-surface") */
+  --color-surface: #111417; /* solid card-level surface ("surface") */
+  --color-surface-elevated: #1d2023; /* raised surface ("surface-container") */
+  --color-surface-muted: #0c0e12; /* quietest surface, e.g. footer background */
+
+  /* ---- Text hierarchy ---- */
+  --color-text-primary: #e1e2e7; /* on-surface */
+  --color-text-secondary: #c2c6d7; /* on-surface-variant */
+  --color-text-muted: #8c90a0; /* outline — subtle/disabled copy */
+
+  /* ---- Brand accents ---- */
+  --color-primary: #afc6ff; /* "Flow Blue" — the dominant accent for text/icons/links */
+  --color-primary-foreground: #002d6c; /* readable dark text on a primary-colored surface */
+  --color-secondary: #00f1fd; /* "Cyan Glow" accent */
+  --color-accent: #528dff; /* saturated blue used in the primary CTA gradient + glow */
+  --color-accent-foreground: #00275f; /* text/selection color on top of accent */
+
+  /* ---- Borders ---- */
+  --color-border: rgb(255 255 255 / 0.1); /* standard glass-card border */
+  --color-border-strong: rgb(255 255 255 / 0.2); /* hover/active border */
+
+  /* ---- Glass surface ----
+     Exact Stitch glass-card background — a distinct one-off value, not
+     derived from --color-surface, so it is tokenized here rather than
+     hardcoded inside components. */
+  --color-glass: rgb(13 17 23 / 0.6);
+
+  /* ---- Radius scale (Stitch "rounded" scale) ---- */
+  --radius-xs: 0.25rem; /* 4px */
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px — buttons, inputs */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.5rem; /* 24px — large cards/containers */
+
+  /* ---- Layout ---- */
+  --container-content: 80rem; /* 1280px max content width -> max-w-content */
+  --spacing-margin-mobile: 1.25rem; /* 20px */
+  --spacing-margin-desktop: 4rem; /* 64px */
+  --spacing-gutter: 1.5rem; /* 24px */
+  --spacing-section-gap: 7.5rem; /* 120px — desktop section separation */
+  --spacing-section-gap-mobile: 4rem; /* 64px — mobile section separation */
+
+  /* ---- Glow / elevation ---- */
+  --shadow-glow-primary: 0 0 40px rgb(82 141 255 / 0.15); /* resting card glow */
+  --shadow-glow-primary-strong: 0 0 20px rgb(82 141 255 / 0.4); /* primary button hover */
+  --shadow-glow-cyan: 0 0 40px rgb(0 241 253 / 0.25); /* cyan-accented glow */
+
+  /* ---- Typography scale ----
+     Sizes/weights/line-height/letter-spacing sourced from Stitch's
+     DESIGN.md. Font-family is intentionally NOT bundled here — apply
+     `font-heading` (Geist) or `font-body` (Inter) alongside these.
+     `display-xl` uses clamp() so the hero heading scales fluidly instead
+     of jumping between two fixed sizes. */
+  --text-display-xl: clamp(2.25rem, 1.75rem + 3.5vw, 4.5rem);
+  --text-display-xl--line-height: 1.1;
+  --text-display-xl--letter-spacing: -0.04em;
+  --text-display-xl--font-weight: 800;
+
+  --text-display-lg: 3.5rem; /* 56px */
+  --text-display-lg--line-height: 1.2;
+  --text-display-lg--letter-spacing: -0.03em;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-lg: 2.5rem; /* 40px */
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-lg-mobile: 2rem; /* 32px */
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--letter-spacing: -0.02em;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-headline-md: 1.5rem; /* 24px */
+  --text-headline-md--line-height: 1.4;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-lg: 1.125rem; /* 18px */
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 1rem; /* 16px */
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-label-md: 0.875rem; /* 14px */
+  --text-label-md--line-height: 1;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-md--font-weight: 500;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Estimated sticky navbar height, used for anchor scroll-margin below.
+     Update this if the real Navbar (Phase 5) ends up a different height. */
+  --nav-height: 4.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ==========================================================================
+   Base — global background, scroll and interaction states
+   ========================================================================== */
+
+body {
+  background-color: var(--color-background);
+  /* Approved Stitch background grid: a very faint 40px square grid. */
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: var(--color-foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Reserve room for the future sticky navbar when scrolling to any anchor
+   (e.g. #services, #contact) so the target section isn't hidden under it. */
+[id] {
+  scroll-margin-top: var(--nav-height);
+}
+
+/* Smooth in-page anchor scrolling, but only for users who haven't asked
+   for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
+}
+
+/* On-brand keyboard focus ring. This replaces (never simply removes) the
+   browser default so keyboard navigation stays clearly visible. */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
 }
