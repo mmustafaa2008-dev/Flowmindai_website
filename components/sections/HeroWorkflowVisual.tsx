@@ -1,4 +1,4 @@
-import { Bot, CalendarCheck, Database, User } from "lucide-react";
+import { Bell, Bot, Database, User } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -30,9 +30,9 @@ const flowSteps: FlowStep[] = [
   },
   { icon: Database, title: "CRM Sync", description: "Data captured" },
   {
-    icon: CalendarCheck,
+    icon: Bell,
     title: "Appointment Booked",
-    description: "Calendar updated",
+    description: "Follow-up triggered",
     tone: "secondary",
   },
 ];
