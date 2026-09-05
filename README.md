@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FlowMind AI
+
+**AI Solutions That Automate, Convert & Scale Your Business.**
+
+FlowMind AI is a modern, responsive marketing website for an AI automation agency. It showcases intelligent AI solutions, services, workflows, concept projects, pricing, and a conversion-focused contact experience.
+
+## Live Website
+
+[Visit FlowMind AI](https://flowmind-ai-alpha.vercel.app)
+
+## Services
+
+- AI Agents
+- AI Automations
+- AI Chatbots
+- AI Websites
+
+## Key Features
+
+- Fully responsive design for desktop, tablet, and mobile
+- Modern AI-focused user interface
+- Conversion-focused hero section and CTAs
+- Service showcase with centralized content management
+- Five-step process: Discover, Design, Build, Launch, and Optimize
+- Concept project showcase
+- Pricing, About, FAQ, and Contact sections
+- Contact form with validation and email functionality
+- SEO-ready metadata, sitemap, and robots configuration
+- Reusable and accessible UI components
+- Smooth animations powered by Framer Motion
+
+## Concept Projects
+
+The website includes the following illustrative concept demos:
+
+- Dental Practice Booking Agent
+- E-commerce Fulfillment Sync
+- Real Estate Lead Qualifier
+
+> These examples are concept demos created to demonstrate FlowMind AI’s solution capabilities.
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [Vercel](https://vercel.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.18 or later
+- npm, pnpm, yarn, or Bun
+
+### Installation
 
 ```bash
+git clone <your-repository-url>
+cd flowmind-ai
+npm install
+Create a .env.local file and add the environment variables required for the contact form.
+
+Start the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Available Scripts
+npm run dev      # Start the development server
+npm run build    # Create a production build
+npm run start    # Start the production server
+npm run lint     # Run linting checks
+Project Structure
+app/                    Next.js routes, layout, and metadata
+components/             Reusable UI and section components
+components/sections/    Homepage sections
+lib/content/            Centralized website content
+public/                 Static assets
+Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project is deployed on Vercel. New commits pushed to the connected production branch can be deployed automatically through Vercel’s Git integration.
 
-## Learn More
+License
 
-To learn more about Next.js, take a look at the following resources:
+This project is proprietary. The source code and brand assets may not be copied, modified, distributed, or reused without permission from FlowMind AI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built for FlowMind AI — Automate. Optimize. Grow.
