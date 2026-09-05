@@ -5,15 +5,19 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projects } from "@/lib/content/projects";
 
 /**
- * "Selected Work" — illustrative AI solution concepts.
+ * "Selected Work" — real, client-provided projects.
  *
  * Server Component. Content comes entirely from `projects`
- * (`lib/content/projects.ts`), which intentionally marks every current
- * entry `status: "demo"` — none of these are confirmed FlowMind AI
- * client projects. The section description below states that plainly,
- * and every card carries its own status badge (see `ProjectCard`), so
- * the demonstration nature is clear without making the grid look
- * unfinished.
+ * (`lib/content/projects.ts`). As of the September 2026 portfolio
+ * update these are real projects supplied directly by the client (with
+ * GitHub repository links), not illustrative concepts — so the section
+ * copy states that plainly without overclaiming unverified results,
+ * clients, or metrics.
+ *
+ * Layout: five cards don't divide evenly into a 3-column grid, so this
+ * uses `flex-wrap` + `justify-center` instead of CSS grid — full rows of
+ * three lay out left-to-right as normal, and the trailing row of two
+ * centers itself automatically instead of leaving a lopsided gap.
  *
  * No top padding: Live Demo above already ends with generous bottom
  * padding, so stacking a full section-gap here would recreate the
@@ -27,13 +31,16 @@ export function Projects() {
           <SectionHeading
             eyebrow="Selected Work"
             title="AI Solutions in Action"
-            description="Illustrative examples of the AI solutions FlowMind AI builds — not verified client case studies."
+            description="Explore a selection of AI agents, automation systems, and intelligent applications built across development, business operations, e-commerce, and financial technology."
           />
         </FadeIn>
 
-        <div className="gap-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="gap-gutter flex flex-wrap justify-center">
           {projects.map((project) => (
-            <FadeIn key={project.slug}>
+            <FadeIn
+              key={project.slug}
+              className="w-full shrink-0 grow-0 md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
+            >
               <ProjectCard project={project} />
             </FadeIn>
           ))}

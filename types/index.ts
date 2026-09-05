@@ -42,25 +42,41 @@ export interface ProcessStep {
 }
 
 /**
- * Verification status for a "Selected Work" entry.
+ * A "Selected Work" entry.
  *
- * - "demo": an illustrative concept used to demonstrate FlowMind's
- *   capabilities. Must never be presented as a completed client project.
- * - "comingSoon": a project that exists but has no public link/asset yet.
- * - "verified": a real, client-approved project safe to present as such.
+ * These are real, client-provided projects (client-supplied source of
+ * truth as of the September 2026 portfolio update) — not illustrative
+ * concepts. Keep this data honest: no field here should imply metrics,
+ * clients, or results beyond what was actually supplied.
  */
-export type ProjectStatus = "demo" | "comingSoon" | "verified";
-
 export interface Project {
   slug: string;
-  category: string;
   title: string;
+  /** Primary category/type shown as the card's badge, e.g. "AI Agent". */
+  category: string;
+  /** Concise "website description" shown as the card's main copy. */
+  description: string;
+  /** Longer problem statement — retained for a future project-detail view, not necessarily rendered on the homepage card. */
   problem: string;
-  solution: string;
+  /**
+   * Full feature list. The card renders only the first few (see
+   * `ProjectCard`'s `MAX_CARD_FEATURES`) — the rest is kept here for a
+   * future project-detail page rather than duplicated elsewhere.
+   */
   features: string[];
-  status: ProjectStatus;
-  /** Only present when status is "verified" and a real URL exists. */
-  href?: string;
+  /**
+   * Full technology-stack list. The card renders only the first few (see
+   * `ProjectCard`'s `MAX_CARD_TECHNOLOGIES`).
+   */
+  technologies: string[];
+  /** Public GitHub repository URL, if one is confirmed reachable. */
+  githubUrl?: string;
+  /**
+   * Whether `githubUrl` has been confirmed reachable and is safe to link
+   * publicly. When `false`, the card renders a disabled CTA instead of a
+   * dead/unconfirmed link — never silently substitute a guessed URL.
+   */
+  repositoryAvailable: boolean;
 }
 
 /** A single pricing tier/card. */

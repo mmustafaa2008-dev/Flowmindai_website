@@ -17,27 +17,53 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const titleDefault = `${siteConfig.name} | AI Agents, Automations, Chatbots & Websites`;
+const socialImage = {
+  url: "/assets/brand/flowmind-ai-og.png",
+  width: 1200,
+  height: 630,
+  alt: `${siteConfig.name} — AI Solutions That Automate, Convert & Scale Your Business.`,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: titleDefault,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: [
+    "FlowMind AI",
+    "AI agents",
+    "AI automation",
+    "AI chatbots",
+    "AI websites",
+    "business process automation",
+    "AI solutions agency",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: titleDefault,
     description: siteConfig.description,
     url: "/",
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: titleDefault,
     description: siteConfig.description,
+    images: [socialImage.url],
   },
-  // A real OG/social share image and favicon are deferred until the
-  // official logo's compact/derivative treatment is decided (Phase 4/5).
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
