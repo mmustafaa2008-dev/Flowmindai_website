@@ -21,8 +21,7 @@ interface ContactDetail {
  * Confirmed contact channels, derived entirely from `siteConfig` — no
  * duplicated email/phone/LinkedIn strings. WhatsApp gets its own row
  * (distinct from the plain phone call action) using the same confirmed
- * business number, per the client's explicit instruction that WhatsApp be
- * separately available and never reused for the Live Demo number.
+ * real business number.
  */
 const contactDetails: ContactDetail[] = [
   {
@@ -68,8 +67,8 @@ const contactDetails: ContactDetail[] = [
  * No top padding: Final CTA above already ends with generous bottom
  * padding. Bottom padding here is kept (rather than pt-0'd by Footer)
  * because Footer is a visually distinct landmark with its own
- * background/border, matching how tinted sections (`WhyFlowMind`,
- * `LiveDemo`) keep full padding on both sides.
+ * background/border, matching how the tinted `WhyFlowMind` section keeps
+ * full padding on both sides.
  */
 export function Contact() {
   return (

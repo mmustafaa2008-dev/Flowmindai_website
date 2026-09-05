@@ -59,7 +59,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
   }
 
   return (
-    <div className="md:hidden">
+    <div className="nav:hidden">
       <button
         type="button"
         aria-expanded={isOpen}

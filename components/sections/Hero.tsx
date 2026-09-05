@@ -1,4 +1,4 @@
-import { ArrowRight, PlayCircle, Zap } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { Container } from "@/components/layout/Container";
@@ -28,9 +28,11 @@ function GradientWord({ children }: { children: ReactNode }) {
  * Layout: a two-column grid on large screens (messaging left, workflow
  * visual right) that collapses to a single stacked column on mobile in
  * exactly this priority order — badge, headline, supporting copy, service
- * line, primary CTA, secondary CTA, live-demo link, then the supporting
- * visual — because that is simply document order once the grid collapses
- * to one column.
+ * line, primary CTA, secondary CTA, then the supporting visual — because
+ * that is simply document order once the grid collapses to one column.
+ *
+ * Only two CTAs remain: primary "Book a Free Consultation" (→ `#contact`)
+ * and secondary "Explore Our Solutions" (→ `#services`).
  */
 export function Hero() {
   return (
@@ -73,10 +75,6 @@ export function Hero() {
               </Button>
               <Button href="#services" variant="secondary">
                 Explore Our Solutions
-              </Button>
-              <Button href="#live-demo" variant="ghost">
-                See Live AI Agent Demo
-                <PlayCircle aria-hidden="true" className="h-4 w-4" />
               </Button>
             </div>
           </FadeIn>

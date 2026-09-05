@@ -103,6 +103,18 @@
   --text-label-md--line-height: 1;
   --text-label-md--letter-spacing: 0.05em;
   --text-label-md--font-weight: 500;
+
+  /* ---- Custom breakpoint ----
+     `nav`: the width at which the full desktop navbar (logo + wordmark +
+     5 links + primary CTA) reliably fits on one line with comfortable
+     breathing room. Measured in a real browser: at the default `md`
+     breakpoint (768px) and even at 900px the desktop nav's own content
+     (~870px before container padding) leaves only ~5-25px of slack,
+     causing "How It Works" and other links/the CTA to wrap awkwardly.
+     1104px leaves ~100px of slack, which held up cleanly through 768,
+     800, 900, 1024 (mobile menu) and 1104+ (desktop nav). Do not lower
+     this without re-measuring in a real browser — see Navbar.tsx. */
+  --breakpoint-nav: 69rem; /* 1104px */
 }
 
 :root {

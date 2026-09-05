@@ -57,17 +57,6 @@ export const siteConfig = {
 
   /** Core service offerings, referenced by slug from lib/content/services.ts. */
   coreServices: ["AI Agents", "AI Automations", "AI Chatbots", "AI Websites"] as const,
-
-  /**
-   * Live AI Agent demo status. No confirmed demo phone number exists yet.
-   * Update this in one place once a real number is confirmed — never
-   * fabricate one, and never reuse the business phone number for it.
-   */
-  liveDemo: {
-    available: false,
-    statusLabel: "Demo Number Coming Soon",
-    phone: null as string | null,
-  },
 } as const;
 
 /** mailto: link for the confirmed contact email. */

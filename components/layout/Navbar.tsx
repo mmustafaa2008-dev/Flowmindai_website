@@ -22,6 +22,14 @@ import { siteConfig } from "@/lib/content/site";
  * mobile menu trigger + drawer — is isolated in `MobileMenu`, a small
  * Client Component, so the rest of the navbar (and the Hero below it)
  * stays server-renderable.
+ *
+ * The desktop nav (links + CTA) only appears at the custom `nav:`
+ * breakpoint (1104px, defined in globals.css as `--breakpoint-nav`), not
+ * the default Tailwind `md` (768px). Measured in a real browser: at
+ * 768-1024px the full set of links + CTA does not fit next to the
+ * logo/wordmark, so text wraps awkwardly (e.g. "How It Works" breaking
+ * onto two lines). Below `nav:`, `MobileMenu` renders instead. Do not
+ * revert this to `md:` — see the comment above `--breakpoint-nav`.
  */
 export function Navbar() {
   return (
@@ -43,25 +51,30 @@ export function Navbar() {
             priority
             className="h-9 w-auto"
           />
-          <span className="font-heading text-headline-md text-foreground font-extrabold tracking-tight">
+          <span className="font-heading text-headline-md text-foreground font-extrabold tracking-tight whitespace-nowrap">
             {siteConfig.name}
           </span>
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="nav:flex hidden items-center gap-8">
           {primaryNavLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-heading text-label-md text-text-secondary hover:text-primary focus-visible:text-primary font-medium transition-colors"
+              className="font-heading text-label-md text-text-secondary hover:text-primary focus-visible:text-primary font-medium whitespace-nowrap transition-colors"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <div className="hidden md:block">
-          <Button href={siteConfig.primaryCta.href} variant="primary" size="sm">
+        <div className="nav:block hidden">
+          <Button
+            href={siteConfig.primaryCta.href}
+            variant="primary"
+            size="sm"
+            className="whitespace-nowrap"
+          >
             {siteConfig.primaryCta.label}
           </Button>
         </div>

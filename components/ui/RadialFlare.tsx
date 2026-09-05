@@ -5,9 +5,9 @@ interface RadialFlareProps {
 }
 
 /**
- * Ambient blue radial glow used sparingly behind hero visuals, feature
- * icons, and the live-demo panel in the approved Stitch design. Purely
- * decorative — always non-interactive and hidden from assistive tech.
+ * Ambient blue radial glow used sparingly behind hero visuals and other
+ * feature panels in the approved Stitch design. Purely decorative —
+ * always non-interactive and hidden from assistive tech.
  *
  * Usage: place inside a `relative overflow-hidden` parent and size/position
  * it with `className` (the default is `absolute inset-0`, matching most

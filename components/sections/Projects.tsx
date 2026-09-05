@@ -19,7 +19,7 @@ import { projects } from "@/lib/content/projects";
  * three lay out left-to-right as normal, and the trailing row of two
  * centers itself automatically instead of leaving a lopsided gap.
  *
- * No top padding: Live Demo above already ends with generous bottom
+ * No top padding: HowItWorks above already ends with generous bottom
  * padding, so stacking a full section-gap here would recreate the
  * "excessive blank gap" problem addressed in earlier phases.
  */
