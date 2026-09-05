@@ -29,6 +29,7 @@
   --color-secondary: #00f1fd; /* "Cyan Glow" accent */
   --color-accent: #528dff; /* saturated blue used in the primary CTA gradient + glow */
   --color-accent-foreground: #00275f; /* text/selection color on top of accent */
+  --color-danger: #f87171; /* form validation error state — not present in the Stitch export, added Phase 8 because accessible error states require a real color token instead of a raw Tailwind red-500 */
 
   /* ---- Borders ---- */
   --color-border: rgb(255 255 255 / 0.1); /* standard glass-card border */
@@ -105,8 +106,10 @@
 }
 
 :root {
-  /* Estimated sticky navbar height, used for anchor scroll-margin below.
-     Update this if the real Navbar (Phase 5) ends up a different height. */
+  /* Real sticky Navbar height (Phase 4, `components/layout/Navbar.tsx`),
+     used both by the navbar itself (`h-(--nav-height)`) and by the
+     anchor scroll-margin below so in-page links don't land underneath
+     it. Keep these in sync if the navbar's height ever changes. */
   --nav-height: 4.5rem;
 }
 
