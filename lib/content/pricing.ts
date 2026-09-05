@@ -49,4 +49,4 @@ export const pricingTiers: PricingTier[] = [
  * costs are the client's responsibility and are explicitly not included.
  */
 export const pricingDisclaimer =
-  "*Note: Subscription/usage fees for third-party tools (e.g., Vapi, Bland AI, Zapier, Make, Synthflow, OpenAI, Twilio, Calendly, domain registration/hosting) are the responsibility of the client and are not included in these prices.";
+  "*Note: Subscription/usage fees for third-party tools (e.g., Vapi, Bland AI, Zapier, Make, Synthflow, OpenAI, Twilio, domain registration/hosting) are the responsibility of the client and are not included in these prices.";
