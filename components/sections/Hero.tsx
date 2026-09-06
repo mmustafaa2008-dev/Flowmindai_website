@@ -56,8 +56,8 @@ export function Hero() {
 
           <FadeIn>
             <p className="font-body text-body-lg text-text-secondary max-w-xl">
-              We build AI agents, chatbots, websites and custom automations that help businesses
-              reduce repetitive work, respond faster and capture more opportunities.
+              We build intelligent agents, chatbots, websites and custom automations that help
+              businesses reduce repetitive work, respond faster and capture more opportunities.
             </p>
           </FadeIn>
 

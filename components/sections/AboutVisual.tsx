@@ -51,7 +51,7 @@ export function AboutVisual() {
           />
         </div>
         <span className="font-heading text-label-md text-text-secondary tracking-wider uppercase">
-          Smarter Businesses with AI
+          Smarter Businesses Through Automation
         </span>
       </div>
 

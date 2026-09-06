@@ -21,7 +21,7 @@ export function Pricing() {
     <section id="pricing" className="relative pb-16 md:pb-20 lg:pb-24">
       <Container className="flex flex-col gap-16">
         <FadeIn>
-          <SectionHeading eyebrow="Flexible Solutions" title="Start With the Right AI Solution" />
+          <SectionHeading eyebrow="Flexible Solutions" title="Start With the Right Solution" />
         </FadeIn>
 
         <div className="gap-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">

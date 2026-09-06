@@ -12,7 +12,7 @@ export const services: Service[] = [
     slug: "ai-agents",
     title: "AI Agents",
     description:
-      "AI-powered conversational agents that handle customer interactions, qualification, appointments and follow-ups.",
+      "Conversational agents designed to handle customer interactions, qualification, appointments and follow-ups.",
     icon: Bot,
     useCases: ["Inbound Support", "Outbound Sales", "Appointment Setting"],
   },
@@ -33,7 +33,8 @@ export const services: Service[] = [
   {
     slug: "ai-websites",
     title: "AI Websites",
-    description: "High-converting landing pages built with AI-optimized copy and structure.",
+    description:
+      "Conversion-focused websites with intelligent features, clear messaging and streamlined user experiences.",
     icon: Globe,
     useCases: ["Rapid Deployment", "SEO Optimized", "Conversion Focused"],
   },

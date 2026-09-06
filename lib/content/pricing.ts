@@ -1,7 +1,7 @@
 import type { PricingTier } from "@/types";
 
 /**
- * Pricing tiers shown in the "Start With the Right AI Solution" section.
+ * Pricing tiers shown in the "Start With the Right Solution" section.
  * Figures are sourced from the approved Stitch export / client blueprint
  * and must stay in sync with the sales sheet. Uses "starting from"
  * language deliberately — these are not fixed, all-inclusive prices.
@@ -13,7 +13,7 @@ export const pricingTiers: PricingTier[] = [
     priceLabel: "Starting from",
     price: "$400",
     description:
-      "High-converting landing pages built with AI-optimized copy and structure. + applicable ongoing/maintenance fees.",
+      "High-converting landing pages built with optimized copy and structure. + applicable ongoing/maintenance fees.",
     ctaLabel: "Get Started",
   },
   {

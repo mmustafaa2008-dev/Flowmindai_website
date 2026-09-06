@@ -32,7 +32,7 @@ export function WhyFlowMind() {
           <SectionHeading
             eyebrow="Why FlowMind"
             title="AI That Works for Your Business"
-            description="We focus on practical AI systems built around real business challenges, not technology for the sake of technology."
+            description="We focus on practical systems built around real business challenges, not technology for the sake of technology."
           />
         </FadeIn>
 

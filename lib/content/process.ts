@@ -8,7 +8,7 @@ export const processSteps: ProcessStep[] = [
   {
     order: "01",
     title: "Discover",
-    description: "We analyze your workflows to identify AI opportunities.",
+    description: "We analyze your workflows to identify automation opportunities.",
   },
   {
     order: "02",
@@ -18,7 +18,7 @@ export const processSteps: ProcessStep[] = [
   {
     order: "03",
     title: "Build",
-    description: "Our developers integrate and train your AI solution.",
+    description: "Our developers build and integrate your solution.",
   },
   {
     order: "04",

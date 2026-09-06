@@ -30,7 +30,7 @@ export function Projects() {
         <FadeIn>
           <SectionHeading
             eyebrow="Selected Work"
-            title="AI Solutions in Action"
+            title="Solutions in Action"
             description="Explore a selection of AI agents, automation systems, and intelligent applications built across development, business operations, e-commerce, and financial technology."
           />
         </FadeIn>

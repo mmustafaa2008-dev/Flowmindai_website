@@ -24,8 +24,8 @@ export function Services() {
         <FadeIn>
           <SectionHeading
             eyebrow="What We Build"
-            title="Purpose-Built AI Solutions"
-            description="Purpose-built AI solutions tailored to streamline your specific business needs."
+            title="Purpose-Built Solutions"
+            description="Smart systems tailored to streamline your specific business needs."
           />
         </FadeIn>
 

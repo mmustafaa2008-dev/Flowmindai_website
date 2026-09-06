@@ -36,8 +36,8 @@ export function FinalCTA() {
         </FadeIn>
         <FadeIn>
           <p className="font-body text-body-lg text-text-secondary max-w-2xl">
-            Let&apos;s explore where AI can save your business time, improve customer experiences
-            and unlock new opportunities.
+            Let&apos;s explore where automation can save your business time, improve customer
+            experiences and unlock new opportunities.
           </p>
         </FadeIn>
         <FadeIn>

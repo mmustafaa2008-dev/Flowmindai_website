@@ -16,7 +16,7 @@ export const benefits: Benefit[] = [
   {
     title: "Custom Integrations",
     description:
-      "Our AI seamlessly connects with your existing CRM, calendar, and software stack so you don't have to change how you work.",
+      "Our solutions seamlessly connect with your existing CRM, calendar, and software stack so you don't have to change how you work.",
     icon: Plug,
   },
   {
@@ -28,7 +28,7 @@ export const benefits: Benefit[] = [
   {
     title: "Built to Scale",
     description:
-      "As your business grows, our AI systems handle increased volume, supporting your expanding operations reliably.",
+      "As your business grows, our systems handle increased volume, supporting your expanding operations reliably.",
     icon: TrendingUp,
   },
 ];

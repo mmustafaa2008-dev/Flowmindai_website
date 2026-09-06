@@ -40,7 +40,7 @@ export function About() {
             </p>
             <GlassCard className="border-secondary/40 border-l-4 p-6">
               <p className="font-body text-body-md text-foreground font-semibold italic">
-                &ldquo;Our mission is to make powerful AI solutions practical and accessible for
+                &ldquo;Our mission is to make intelligent automation practical and accessible for
                 growing businesses.&rdquo;
               </p>
             </GlassCard>
