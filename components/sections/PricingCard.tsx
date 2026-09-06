@@ -12,7 +12,7 @@ interface PricingCardProps {
  * A single pricing tier card.
  *
  * Reproduces the approved Stitch pricing card, including the "Featured"
- * treatment for the AI Agent tier (lifted, glowing border, primary CTA)
+ * treatment for the Agent tier (lifted, glowing border, primary CTA)
  * — "Featured" is the exact approved badge wording; no "Most Popular" or
  * other popularity claim is added. The optional `recurringNote` is
  * rendered as its own visually distinct line (not merged into the same

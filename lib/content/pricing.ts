@@ -9,7 +9,7 @@ import type { PricingTier } from "@/types";
 export const pricingTiers: PricingTier[] = [
   {
     slug: "ai-website",
-    title: "AI Website",
+    title: "Website",
     priceLabel: "Starting from",
     price: "$400",
     description:
@@ -18,7 +18,7 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     slug: "ai-chatbot",
-    title: "AI Chatbot",
+    title: "Chatbot",
     priceLabel: "Starting from",
     price: "$500",
     description: "Intelligent text-based assistants trained on your specific business data.",
@@ -27,7 +27,7 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     slug: "ai-agent",
-    title: "AI Agent",
+    title: "Agent",
     priceLabel: "Starting from",
     price: "$1,000",
     description: "Human-like conversational voice agents that handle inbound/outbound calls 24/7.",
@@ -37,7 +37,7 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     slug: "custom-ai-automation",
-    title: "Custom AI Automation",
+    title: "Custom Automation",
     price: "Custom Quote",
     description: "Complex, multi-step workflows connecting various apps and databases.",
     ctaLabel: "Contact Us",
